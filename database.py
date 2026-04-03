@@ -133,7 +133,7 @@ async def restore_booking(booking_id):
 
         if booking:
             await db.execute("""
-            INSERT INTO bookings (id, user_id, master, service, date, time)
+            INSERT INTO bookings (id, user_id, master, service, date, time, reminded)
             VALUES (?, ?, ?, ?, ?, ?, 0)
             """, booking)
 
