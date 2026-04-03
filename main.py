@@ -5,7 +5,7 @@ from config import BOT_TOKEN
 from database import init_db
 from handlers.client import router as client_router
 from handlers.admin import router as admin_router
-from utils.reminder import reminder
+# from utils.reminder import reminder
 from services.notifier import notifier
 
 async def main():
@@ -17,7 +17,7 @@ async def main():
 
     await init_db()
 
-    asyncio.create_task(reminder(bot))
+    asyncio.create_task(notifier(bot))
 
     print("Бот запущен 🚀")
     await dp.start_polling(bot)
